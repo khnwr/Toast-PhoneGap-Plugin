@@ -54,7 +54,7 @@ public class Toast extends CordovaPlugin {
 
     } else if (ACTION_SHOW_EVENT.equals(action)) {
       if (this.isPaused) {
-        return true;
+        return false;
       }
 
       final JSONObject options = args.getJSONObject(0);
@@ -250,7 +250,7 @@ public class Toast extends CordovaPlugin {
   @Override
   public void onPause(boolean multitasking) {
     //hide();
-    this.isPaused = true;
+    this.isPaused = false;
   }
 
   @Override
